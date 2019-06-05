@@ -2,7 +2,7 @@
 
 This is my submission as the third project of the [Full Stack Nano Degree from Udacity](https://www.udacity.com/course/full-stack-web-developer-nanodegree--nd004).
 
-This project is about how to take a baseline installation of a Linux server and prepare it to host web applications. how to secure the server from a number of attack vectors, install and configure a database server, and deploy an existing [web application](https://github.com/Amr-Fekry/FSND-project2-item-catalog) onto it.
+This project is about how to take a baseline installation of a Linux server and prepare it to host web applications. It involves how to secure the server from a number of attack vectors, install and configure a database server, and deploy an existing [web application](https://github.com/Amr-Fekry/FSND-project2-item-catalog) onto it.
 
 ### Server Information:
 - IP Address: 52.57.126.228
@@ -13,24 +13,26 @@ This project is about how to take a baseline installation of a Linux server and 
 - download the `grader_key` file (preferably into `~/.ssh/` directory)
 - `ssh grader@52.57.126.228 -p 2200 -i ~/.ssh/grader_key`
 
-### Server Configuration and Software:
+### Server Configuration:
 1. Start a new Ubuntu Linux server instance on [Amazon Lightsail](https://lightsail.aws.amazon.com).
-2. Login into instance using a provided SSH key for a default user `ubuntu`.   
+2. Login into instance using a provided SSH key for a default user `ubuntu`.  \
 **------- _User Management_**  
-3. Remote login as `root` user is disabled by default on instance.
+3. Disable remote login as user `root`.
 4. Create a new user `grader` and give him `sudo` access.
-5. Create an SSH key pair for `grader` using the `ssh-keygen` tool.   
+5. Create an SSH key pair for `grader` using the `ssh-keygen` tool.  \
 **------- _Security_**  
 6. Update Package-Source-List and all currently installed packages.
 7. Change SSH hosting port from the default 22 into 2200.
-8. Configure firewall to only allow connections for (SSH, HTTP, NTP) on ports (2200, 80, 123) respectively.
-9. Force Key-based SSH authentication.   
+8. Configure `ufw` (Uncomplicated Firewall) to only allow connections for (SSH, HTTP, NTP) on ports (2200, 80, 123) respectively.
+9. Force Key-based SSH authentication.  \
 **------- _Prepare for deployment_**
 10. Configure the local timezone to UTC.
-11. Install `Apache` web server.
-12. Install `mod_wsgi` python application handler. 
-13. Install `PostgreSQL` database server.
-14. Install `Git` version control system.
+
+### Software Installed:
+- Install `Apache` web server.
+- Install `mod_wsgi` python application handler. 
+- Install `PostgreSQL` database server.
+- Install `Git` version control system.
 
 ### Deployment:
 - Clone [Item Catalog](https://github.com/Amr-Fekry/FSND-project2-item-catalog) project.
